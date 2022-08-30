@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Kunto Test"
+echo "Kunto Test" > /tmp/test1234
