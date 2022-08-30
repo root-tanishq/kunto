@@ -4,8 +4,8 @@
 # MIT Licensed
 
 # Variables
-mkdir ~/.kunto 2>/dev/null
-export DIR="~/.kunto/"
+mkdir "$HOME/.kunto" 2>/dev/null
+export DIR="$HOME/.kunto/"
 export AUTHOR="root-tanishq"
 
 # Checking for super user access
