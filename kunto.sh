@@ -22,11 +22,30 @@ fi
 
 # Help Menu
 function help_menu () {
-	echo "Help Menu here"
+	echo -e "\033[0;36m
+
+   ▄█   ▄█▄ ███    █▄  ███▄▄▄▄       ███      ▄██████▄  
+  ███ ▄███▀ ███    ███ ███▀▀▀██▄ ▀█████████▄ ███    ███ 
+  ███▐██▀   ███    ███ ███   ███    ▀███▀▀██ ███    ███ 
+ ▄█████▀    ███    ███ ███   ███     ███   ▀ ███    ███ 
+▀▀█████▄    ███    ███ ███   ███     ███     ███    ███ 
+  ███▐██▄   ███    ███ ███   ███     ███     ███    ███ 
+  ███ ▀███▄ ███    ███ ███   ███     ███     ███    ███ 
+  ███   ▀█▀ ████████▀   ▀█   █▀     ▄████▀    ▀██████▀  
+  ▀                                                     
+                  
+     					- Tanishq Rathore
+ Help menu 
+
+ $0 install <tool name>					- Install the following tool.
+ $0 search <tool name>					- Search for available tools in the authors github.
+ $0 update						- Update kunto to the latest version.
+
+        "
 }
 
 # Checking for positional parameteres
-if [[ -z $1 || -z $2 ]];then
+if [[ -z $1 ]];then
 	help_menu
 	exit
 fi
@@ -35,17 +54,37 @@ fi
 # Functionality
 case "$1" in
 "install")
-	echo "install"
+	if [[ -z $2 ]];then
+		help_menu
+		exit
+	fi
+	if [[ $(curl -sI https://${AUTHOR}.github.io/kunto/scripts/kuntool_$2.sh  | grep HTTP/ | cut -d ' ' -f 2) == "200" ]]; then
+		echo -e "\033[0;0m[\033[0;32m❯\033[0;0m] Installing $2 from ${AUTHOR} github.";
+		bash -c "$(curl -fsSL https://${AUTHOR}.github.io/kunto/scripts/kuntool_$2.sh)";
+	else
+		echo -e "[\033[0;31m❯\033[0;0m] $2 not found in $AUTHOR github.";
+	fi
+	exit
 	;;
-"about")
-	echo "about"
+"help")
+	help_menu
+	exit
 	;;
 "search")
+	if [[ -z $2 ]];then
+		help_menu
+		exit
+	fi
 	echo -e "\033[0;0m[\033[0;32m❯\033[0;0m] Following tools found in ${AUTHOR} github.";
 	curl -fsSL https://github.com/${AUTHOR}/kunto/tree/main/scripts | grep title=\"kuntool_* | awk -F'title="kuntool_' '{print $2}' | awk -F'.sh"' '{print $1}' | grep -i $2
 	;;
 "update")
-	echo "$0"
+	if [[ $(curl -fsSL https://${AUTHOR}.github.io/kunto/kunto.sh | md5sum | cut -d ' ' -f '1') != $(md5sum $0 | cut -d ' ' -f '1') ]] ;then 
+		echo -e "\033[0;0m[\033[0;32m❯\033[0;0m] Updating kunto from ${AUTHOR} github.";
+		${SMK_SUDO} curl -fsSL https://${AUTHOR}.github.io/kunto/kunto.sh -o $0;
+		${SMK_SUDO} chmod +x $0;
+		exit
+	fi
 	;;
 *)
 	help_menu
