@@ -5,7 +5,7 @@
 
 # Variables
 mkdir ~/.kunto 2>/dev/null
-export DIR="~/.kunto"
+export DIR="~/.kunto/"
 export AUTHOR="root-tanishq"
 
 # Checking for super user access
