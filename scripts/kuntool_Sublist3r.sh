@@ -5,6 +5,7 @@ ${SMK_SUDO} apt install git -y
 cd ${DIR}
 # Cloning Repository
 git clone https://github.com/aboul3la/Sublist3r.git
+cd Sublist3r
 # Main tool installation
 function tool_install() {
 ${SMK_SUDO} ${PYTHON_PATH} -m pip install -r ${DIR}/Sublist3r/requirements.txt
