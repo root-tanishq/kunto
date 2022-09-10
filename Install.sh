@@ -11,12 +11,16 @@ echo
 exit
 fi
 
-if [[ -e ${which curl} ]]; then
+if [[ -e $(which curl) ]]; then
   ${SMK_SUDO} curl -fsSL https://root-tanishq.github.io/kunto/kunto.sh -o /usr/local/bin/kunto
   ${SMK_SUDO} chmod +x /usr/local/bin/kunto
-elif [[ -e ${which wget} ]]; then
+  echo "kunto --help"
+  kunto --help
+elif [[ -e $(which wget) ]]; then
   ${SMK_SUDO} wget https://root-tanishq.github.io/kunto/kunto.sh -O /usr/local/bin/kunto
   ${SMK_SUDO} chmod +x /usr/local/bin/kunto
+  echo "kunto --help"
+  kunto --help
 else
   echo "Seems like we messed up"
 fi
