@@ -1,6 +1,6 @@
 # Kunto
 > Work In Progress - Not Ready to Use Completely 
-> Want to help ping me on https://twitter.com/root_tanishq
+> Want to help ping me on ![twitter](https://twitter.com/root_tanishq)
 
 Kunto is a bash script which execute github-pages hosted bash script for installing tools fast instead of visiting many repos by yourself , Kunto will do it for you
 
@@ -13,7 +13,7 @@ Kunto is a bash script which execute github-pages hosted bash script for install
 bash -c "$(curl -fsSl https://root-tanishq.github.io/kunto/Install.sh)"
 ```
 
-![kunto install](https://github.com/root-tanishq/kunto/blob/main/images/install_kunto.png)
+![kunto install](https://raw.githubusercontent.com/root-tanishq/kunto/main/images/install_kunto.png)
 
 ## USAGE
 
@@ -33,7 +33,7 @@ Will search for tools present on github-pages.
 kunto search subl
 ``` 
 
-![kunto search](https://github.com/root-tanishq/kunto/blob/main/images/kunto_search.png)
+![kunto search](https://raw.githubusercontent.com/root-tanishq/kunto/main/images/kunto_search.png)
 
 ### Update
 
