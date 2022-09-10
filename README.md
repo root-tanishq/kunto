@@ -81,7 +81,7 @@ fi
 
 If you want to fork and create your own scripts make sure to change the `AUTHOR` in kunto scripts for loading scripts from your FORK.
 
-## About
+## Author
 Hi I am Tanishq AKA Kun I created the tool to make the installation of the tools which are not directly included in the repo.
 
 ## LICENSE
