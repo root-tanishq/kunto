@@ -1,7 +1,9 @@
 #!/bin/bash
 # URL to Repository => https://github.com/aboul3la/Sublist3r
 # Author => Ahmed Aboul-Ela
-${SMK_SUDO} apt install git -y
+if [[ ! -e $(which git) ]];then
+  ${SMK_SUDO} apt install git -y
+fi
 cd ${DIR}
 # Cloning Repository
 git clone https://github.com/aboul3la/Sublist3r.git
