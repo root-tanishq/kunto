@@ -49,6 +49,8 @@ kunto update
 
 Kunto uses bash in the background to install tools. Simple bash script which matches with the *template* and follows the below instructions will work fine with kunto
 - SUDO
+
+
 Use `${SMK_SUDO}` Variable before any command which requires superuser access.
 For EG:- 
 ```bash
@@ -56,6 +58,8 @@ ${SMK_SUDO} apt install git -y
 ```
 
 - Python
+
+
 If the tool is based on python please make sure to use the below code to help kunto use the right *python* binary and version.
 
 ```bash
@@ -84,6 +88,8 @@ fi
 ```
 
 - Go
+
+
 If the tool is based on Go please make sure to use the below code to help kunto finds if the *golang* is installed or not.
 ```bash 
 function tool_install() {
@@ -100,9 +106,13 @@ fi
 ```
 
 - NAMING FORMAT 
+
+
 kunto uses a naming format to find and install scripts which is  `kuntool_<TOOL NAME>.sh` . Please place all the scripts in `scripts` folder of the kunto repository.
 
 - Template
+
+
 Please use the below template for ease of creating the scripts.
 ```bash
 #!/bin/bash
