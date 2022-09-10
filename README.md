@@ -1,6 +1,6 @@
 # Kunto
 > Work In Progress - Not Ready to Use Completely 
-> Want to help ping me on ![twitter](https://twitter.com/root_tanishq)
+> Want to help ping me on https://twitter.com/root_tanishq
 
 Kunto is a bash script which execute github-pages hosted bash script for installing tools fast instead of visiting many repos by yourself , Kunto will do it for you
 
