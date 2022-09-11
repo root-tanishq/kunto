@@ -34,12 +34,14 @@ function help_menu () {
   ███   ▀█▀ ████████▀   ▀█   █▀     ▄████▀    ▀██████▀  
   ▀                                                     
                   
-     					- Tanishq Rathore
+                       \033[1;33m		        - Tanishq Rathore
+ \033[0;34m    																
  Help menu 
 
- $0 install <tool name>					- Install the following tool.
- $0 search <tool name>					- Search for available tools in the authors github.
- $0 update						- Update kunto to the latest version.
+ \033[0;36m$0 install <tool name>					\033[1;33m- Install the following tool.
+ \033[0;36m$0 search <tool name>					\033[1;33m- Search for available tools in the authors github.
+ \033[0;36m$0 update						\033[1;33m- Update kunto to the latest version.
+ \033[0;36m$0 minstall <tool>,<tool>,..				\033[1;33m- Install multiple tool at a single time
 
         "
 }
@@ -85,6 +87,21 @@ case "$1" in
 		${SMK_SUDO} chmod +x $0;
 		exit
 	fi
+	;;
+"minstall")
+	if [[ -z $2 ]];then
+		help_menu
+		exit
+	fi
+	for mtool in $(echo "${2}" | tr "," "\n");do
+		if [[ $(curl -sI https://${AUTHOR}.github.io/kunto/scripts/kuntool_${mtool}.sh  | grep HTTP/ | cut -d ' ' -f 2) == "200" ]]; then
+			echo -e "\033[0;0m[\033[0;32m❯\033[0;0m] Installing ${mtool} from ${AUTHOR} github.";
+			bash -c "$(curl -fsSL https://${AUTHOR}.github.io/kunto/scripts/kuntool_${mtool}.sh)";
+		else
+			echo -e "[\033[0;31m❯\033[0;0m] ${mtool} not found in $AUTHOR github.";
+		fi
+	done
+	exit
 	;;
 *)
 	help_menu
