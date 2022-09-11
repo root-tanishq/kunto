@@ -11,6 +11,8 @@ cd ParamSpider
 # Main tool installation
 function tool_install() {
 ${SMK_SUDO} ${PYTHON_PATH} -m pip install -r ${DIR}/ParamSpider/requirements.txt
+${SMK_SUDO} ln -s ${DIR}/ParamSpider/paramspider.py /usr/local/bin/paramspider
+${SMK_SUDO} chmod +x /usr/local/bin/paramspider
 }
 if [[ -e $(which python) && $(python --version | awk '{print $2}' | awk -F'.' '{print $1}') = "3" && -e $(which pip) ]];then
   export PYTHON_PATH=$(which python);
