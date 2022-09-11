@@ -104,7 +104,7 @@ fi
 If the tool is based on Go please make sure to use the below code to help kunto finds if the *golang* is installed or not.
 ```bash 
 function tool_install() {
-${SMK_SUDO} ${GO_PATH} <Go Command>
+${GO_PATH} <Go Command>
 }
 if [[ ! -e $(which go) ]];then
   ${SMK_SUDO} apt install golang -y

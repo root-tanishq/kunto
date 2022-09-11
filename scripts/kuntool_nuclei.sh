@@ -3,7 +3,7 @@
 # AUTHOR -> Project Discovery
 
 function tool_install() {
-${SMK_SUDO} ${GO_PATH} install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+${GO_PATH} install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 export PATH=$PATH:~/go/bin
 }
 if [[ ! -e $(which go) ]];then
