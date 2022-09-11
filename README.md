@@ -27,6 +27,17 @@ Install subcommnad will fetch the script of the tool and installed into your sys
 kunto install <Script name shown from search command of kunto>
 ```
 
+### MInstall
+
+MInstall subcommand will install multiple tools in one command.
+
+```
+kunto minstall tool1,tool2,test
+```
+
+![kunto minstall](https://raw.githubusercontent.com/root-tanishq/kunto/main/images/kunto_minstall.png)
+
+
 ### Search
 
 Search subcommand will show the available scripts with similar name provided as input.
