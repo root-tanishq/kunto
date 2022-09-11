@@ -1,8 +1,4 @@
 # Kunto
-> Work In Progress - Not Ready to Use Completely 
-
-
-> Want to help ping me on https://twitter.com/root_tanishq
 
 Kunto is a bash tool created for the purpose of installing tools fast. Kunto uses bash scripts hosted on github-pages through which the tools which are not available to REPOS can be installed using kunto if the script for the tool exists.
 
