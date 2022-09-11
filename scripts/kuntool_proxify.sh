@@ -1,9 +1,9 @@
 #!/bin/bash
-# URL -> https://github.com/projectdiscovery/subfinder
+# URL -> https://github.com/projectdiscovery/proxify
 # AUTHOR -> Project Discovery
 
 function tool_install() {
-${GO_PATH} install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+${GO_PATH} install -v github.com/projectdiscovery/proxify/cmd/proxify@latest
 }
 if [[ ! -e $(which go) ]];then
   ${SMK_SUDO} apt install golang -y

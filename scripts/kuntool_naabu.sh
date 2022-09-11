@@ -1,9 +1,10 @@
 #!/bin/bash
-# URL -> https://github.com/projectdiscovery/subfinder
+# URL -> https://github.com/projectdiscovery/naabu
 # AUTHOR -> Project Discovery
 
 function tool_install() {
-${GO_PATH} install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+${SMK_SUDO} apt install -y libpcap-dev
+${GO_PATH} install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 }
 if [[ ! -e $(which go) ]];then
   ${SMK_SUDO} apt install golang -y
