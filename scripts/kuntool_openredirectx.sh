@@ -1,6 +1,6 @@
 #!/bin/bash
-# URL to Repository => https://github.com/devanshbatham/OpenRedireX
-# Author => devanshbatham
+# URL to Repository => https://github.com/aboul3la/Sublist3r
+# Author => Ahmed Aboul-Ela
 if [[ ! -e $(which git) ]];then
   ${SMK_SUDO} apt install git -y
 fi
