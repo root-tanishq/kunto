@@ -1,9 +1,9 @@
 #!/bin/bash
-# URL to Repository => https://github.com/s0md3v/Arjun
-# Author => s0md3v
+# URL to Repository => https://github.com/root-tanishq/userefuzz
+# Author => root-tanishq
 
 function tool_install() {
-${SMK_SUDO} ${PYTHON_PATH} -m pip install arjun
+${SMK_SUDO} ${PYTHON_PATH} -m pip install userefuzz
 }
 if [[ -e $(which python) && $(python --version | awk '{print $2}' | awk -F'.' '{print $1}') = "3" && -e $(which pip) ]];then
   export PYTHON_PATH=$(which python);
